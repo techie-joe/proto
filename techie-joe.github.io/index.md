@@ -4,7 +4,7 @@ title: Techie Joe's Website
 
 <h1 id="_hero-title">👔 Techie Joe's Website</h1>
 
-A personal hub of a full-stack developer.
+A personal hub of a full-stack developer. Welcome to my site.
 
 ---
 
