@@ -33,6 +33,10 @@ theme_color: '#222'
 color_scheme: light dark
 ghost: bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlv
 
+# copyright
+author: Techie Joe
+year: 2025
+
 sass:
   style: compressed
 
