@@ -7,13 +7,24 @@ plugins:
 # - jekyll-paginate
 # - jekyll-sitemap
 
-version: '0.0.2'
-revision: '2511.03'
+version       : '0.0.2'
+revision      : '2511.03'
 
-title: Dove Test
-description: Dove test site.
-# title: # the title of your site (best without the punctuation dot).
-# description: # a short description of your site's purpose.
+title         : Proto
+description   : Proto test site.
+# title       : # the title of your site (best without the punctuation dot).
+# description : # a short description of your site's purpose.
+
+author        : Techie Joe
+year          : 2025
+
+base_url      : '/proto'
+home_url      : '/proto/md'
+
+lang          : 'en-US'
+theme_color   : '#222'
+color_scheme  : light dark
+ghost         : bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlv
 
 # google_analytics: # your Google Analytics tracking ID.
 # to track your website using Google Analytics.
@@ -27,15 +38,6 @@ description: Dove test site.
 # github:
 #   zip_url: http://example.com/download.zip
 #   another_url: another_value
-
-# theme
-theme_color: '#222'
-color_scheme: light dark
-ghost: bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlv
-
-# copyright
-author: Techie Joe
-year: 2025
 
 sass:
   style: compressed
