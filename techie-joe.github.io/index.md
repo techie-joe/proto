@@ -1,5 +1,7 @@
 ---
 title: Techie Joe's Website
+use_nav: false
+use_footer: false
 ---
 
 <h1 id="_hero-title">👔 Techie Joe's Website</h1>
