@@ -16,7 +16,7 @@ use_footer: false
 - [Dove themes](https://techie-joe.github.io/dove)
 - [techie-joe.github.io](techie-joe.github.io)
 
-{: .mt-6 }
+&nbsp;{: .mt-3.mb-3 }
 
 ---
 {: .mt-6 }

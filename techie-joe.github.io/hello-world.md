@@ -37,7 +37,7 @@ So, when I type ***"Hello World"*** .. know this: I'm not testing something. I'm
 
 <div style="margin-top:3rem"></div>
 
-{: .mt-3.mb-3 }
+&nbsp;{: .mt-3.mb-3 }
 
 ---
 
