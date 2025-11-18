@@ -11,5 +11,5 @@ use_footer: false
 
 ###### Testing
 
-- [Dove themes](https://techie-joe.github.io/dove).
+- [Dove themes](https://techie-joe.github.io/dove)
 - [techie-joe.github.io](techie-joe.github.io)
