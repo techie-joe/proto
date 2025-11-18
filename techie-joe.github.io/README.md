@@ -1,10 +1,13 @@
 <h1 id="_hero-title">👔 Techie Joe's Website</h1>
 
-**Hello World** — Welcome to my site. On this little site, I showcase my work and projects I'm working on. Thanks for coming 🤠. [Read more ..](hello-world)
+**Welcome!** This is my digital workspace, where I share my latest work, projects, and ongoing experiments. 🤠 Have a look around. Thanks for stopping by!  
+[Read more ..](hello-world)
 
 ---
 
-| [My Code Library][library] | [Ace][ace] - [Mallet][mallet] - [Sites][sites] - [Dzikr][dzikr] |{: class="borderless" }  
+| [My Code Library][library] | [Ace][ace] - [Mallet][mallet] - [Sites][sites] - [Dzikr][dzikr] |
+{: id="featured_projects" class="borderless" }
+<style>#featured_projects{margin-bottom:3rem}</style>
 
 [library]: https://techie-joe.github.io/library/ "Techie Joe's Library"
 [ace]: https://techie-joe.github.io/ace/ "Web Application Template"
