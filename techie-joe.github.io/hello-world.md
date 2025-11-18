@@ -15,7 +15,7 @@ For most people, ***"Hello World"*** is just a phrase that's totally basic, mayb
 {: .indentx.text-justify }
 
 ---
-{: .mt-3.mb-3 }
+{: .mt-6.mb-6 }
 
 That first ***"Hello World"*** isn't just a line of code, it's the successful initial deployment of an idea. The phrase is way more than just a literal string. It is the initialization of a new potential. It's the triumph to the hours spent on setting-up the environment variables right, wrestling with the linter, and staring down a blank terminal, demanding it to take shape.
 {: .indentx.text-justify.big-first }
@@ -37,8 +37,7 @@ So, when I type ***"Hello World"*** .. know this: I'm not testing something. I'm
 
 <div style="margin-top:3rem"></div>
 
-&nbsp;{: .mt-3.mb-3 }
-
 ---
+{: .mt-6 }
 
 {% include_relative footer.md %}

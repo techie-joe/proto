@@ -35,5 +35,6 @@ use_footer: false
 Read the "[Hello World](hello-world)" article.
 
 ---
+{: .mt-6 }
 
 {% include_relative footer.md %}
