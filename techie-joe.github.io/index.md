@@ -16,12 +16,12 @@ use_footer: false
 
 <div style="margin-top:3rem"></div>
 
-> Have a look around.
+> 😊 Have a look around.
 
 | [My Code Library][library] |  
 | [Ace][ace] - [Mallet][mallet] - [Sites][sites] - [Dove][dove] - [Dzikr][dzikr] |  
 {: id="featured_projects" class="borderless" }
-<style>#featured_projects{margin:3rem 0}</style>
+<style>#featured_projects{margin:1rem 0}</style>
 
 [library]: https://techie-joe.github.io/library/ "Techie Joe's Library"
 [ace]:     https://techie-joe.github.io/ace/ "Web Application Template"
@@ -30,7 +30,7 @@ use_footer: false
 [dove]:    https://techie-joe.github.io/sites/ "Dove - theme development project."
 [dzikr]:   https://github.com/techie-joe/dzikr/ "Techie Joe's Dzikr Wordpress Plugin"
 
-<div style="margin-top:3rem"></div>
+<div style="margin-top:5rem"></div>
 
 Read the "[Hello World](hello-world)" article.
 
