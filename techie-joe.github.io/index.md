@@ -16,7 +16,7 @@ use_footer: false
 
 <div style="margin-top:3rem"></div>
 
-> 😊 Have a look around.
+> Have a look around. 😊
 
 | [My Code Library][library] |  
 | [Ace][ace] - [Mallet][mallet] - [Sites][sites] - [Dove][dove] - [Dzikr][dzikr] |  
