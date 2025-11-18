@@ -4,17 +4,24 @@ use_nav: false
 use_footer: false
 ---
 <style>
+._logo { display:none !important }
 #_hero-title { margin-left:1.6em;text-indent:-1.7em }
 </style>
+
+<div style="margin-top:3rem"></div>
 
 <h1 id="_hero-title">👔 Techie Joe's Website</h1>
 
 **Welcome to my digital workspace**, this is where I share my latest work and experiments.  
 
+<div style="margin-top:3rem"></div>
+
+> Have a look around.
+
 | [My Code Library][library] |  
 | [Ace][ace] - [Mallet][mallet] - [Sites][sites] - [Dove][dove] - [Dzikr][dzikr] |  
 {: id="featured_projects" class="borderless" }
-<style>#featured_projects{margin-bottom:3rem}</style>
+<style>#featured_projects{margin:3rem 0}</style>
 
 [library]: https://techie-joe.github.io/library/ "Techie Joe's Library"
 [ace]:     https://techie-joe.github.io/ace/ "Web Application Template"
@@ -23,7 +30,9 @@ use_footer: false
 [dove]:    https://techie-joe.github.io/sites/ "Dove - theme development project."
 [dzikr]:   https://github.com/techie-joe/dzikr/ "Techie Joe's Dzikr Wordpress Plugin"
 
-Read the ["Hello World"](hello-world) article.
+<div style="margin-top:3rem"></div>
+
+Read the "[Hello World](hello-world)" article.
 
 ---
 
