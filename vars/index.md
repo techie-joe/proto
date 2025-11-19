@@ -13,7 +13,7 @@ page.layout        : {{ page.layout }}
 ```
 
 ```yml
-layout        : {{ layout.layout }}
+layout             : {{ layout.layout }}
 ```
 
 ```yml
@@ -28,6 +28,9 @@ site.description   : {{ site.description }}
 {% assign page.title = 'New Title' %}
 ```yml
 undefined  : {{ undefined | default: '(undefined)' }}
+
+{{ 'hello' | capitalize }}
+
 nick       : {{ nick }}
 layout.zee : {{ nick }}
 ```
