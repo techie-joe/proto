@@ -39,12 +39,12 @@ Comment block should not appear in the rendered Markdown.
 ```
 default     : {{ default | default: '(default)' }}
 upcase      : {{ my_name | upcase }}
-upcase      : {{ my_name | downcase }}
+downcase    : {{ my_name | downcase }}
 capitalize  : {{ my_name | capitalize }}
+replace     : {{ my_name | capitalize | replace: "peterson", "Rodney" }}
 date        : {{ today | date: "%B %d, %Y" }}
 size        : {{ list | size }} (string length)
 split       : {{ list | split: "," | size }} (array size)
-chained     : {{ my_name | downcase | replace: "james", "robert" }}
 ```
 
 ###### controls
@@ -63,6 +63,8 @@ chained     : {{ my_name | downcase | replace: "james", "robert" }}
 {%- endif %}
 
 {% assign condition_4 = 'unique' %}condition_4 : {{ condition_4 }}
+{% unless condition_4 == 'unique' %}unless.condition_4 : unique
+{%- endunless %}
 {% unless condition_4 == 'x_unique' %}unless.condition_4 : x_unique
 {%- endunless %}
 
@@ -76,14 +78,14 @@ case.condition_5 :
 
 ###### jsonify
 
-{% assign object = { "key": "value" } %}
-{% assign values = [ "key" => "value" ] %}
-{% assign arrays = [ "array", 1, 2 ] %}
-{% assign products = [
+{% assign object = '{ "key": "value" }' | parse_json %}
+{% assign values = '[ "key" => "value" ]' | parse_json %}
+{% assign arrays = '[ "array", 1, 2 ]' | parse_json %}
+{% assign products = '[
   {"name": "Laptop", "price": 1200.00, "in_stock": true},
   {"name": "Mouse", "price": 25.50, "in_stock": true},
   {"name": "Keyboard", "price": 80.00, "in_stock": false}
-] %}
+]' | parse_json %}
 
 ```yml
 object: {{ object | jsonify }}
@@ -124,11 +126,9 @@ Be carefull when closing the `raw` tag.
 Closing with `%-` cause build error.  
 
 ```liquid
-{% raw %} {% assign x = 'x' %} {% endraw %}
-{% raw %}
+{% raw %}{% assign x = 'x' %}
 product.title : {{ product.title | default: 'undefined' }}
-product.description : {{ product.description | default: 'undefined' }}
-{%- endraw %}
+product.description : {{ product.description | default: 'undefined' }}{% endraw %}
 ```
 
 ###### echo
@@ -136,7 +136,7 @@ product.description : {{ product.description | default: 'undefined' }}
 Github Pages did not support the `echo` tag at the moment.
 
 ```
-{% raw %} {% echo 'echo' %} {% endraw %}
+{% raw %}{% echo 'echo' %}{% endraw %}
 ```
 
 ###### render
