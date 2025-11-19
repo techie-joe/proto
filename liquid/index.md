@@ -42,21 +42,48 @@ upcase      : {{ my_name | upcase }}
 upcase      : {{ my_name | downcase }}
 capitalize  : {{ my_name | capitalize }}
 date        : {{ today | date: "%B %d, %Y" }}
-size        : {{ list | size }}
-split       : {{ list | split: "," | size }}
+size        : {{ list | size }} (string length)
+split       : {{ list | split: "," | size }} (array size)
 chained     : {{ my_name | downcase | replace: "james", "robert" }}
+```
+
+###### controls
+
+```
+{% assign condition = true %}condition : {{ condition }}
+{% if condition %}if.condition : true
+{%- endif %}
+
+{% assign condition_2 = true %}condition_2 : {{ condition_2 }}
+{% if condition_ %}{%- elsif condition_2 %}elsif.condition_2 : true
+{%- endif %}
+
+{% assign condition_3 = true %}condition_3 : {{ condition_3 }}
+{% if condition_ %}{%- else %}else.condition_3 : true
+{%- endif %}
+
+{% assign condition_4 = 'unique' %}condition_4 : {{ condition_4 }}
+{% unless condition_4 == 'x_unique' %}unless.condition_4 : x_unique
+{%- endunless %}
+
+{% assign condition_5 = 'when-b' %}condition_5 : {{ condition_5 }}
+{% case condition_5 %}
+case.condition_5 :
+{%- when 'when-a' %}is A
+{%- when 'when-b' %}is B
+{%- endcase %}
 ```
 
 ###### jsonify
 
-{% assign object = '{ "key": "value" }' | parse_json %}
-{% assign values = '[ "key" => "value" ]' | parse_json %}
-{% assign arrays = '[ "array", 1, 2 ]' | parse_json %}
-{% assign products = '[
+{% assign object = { "key": "value" } %}
+{% assign values = [ "key" => "value" ] %}
+{% assign arrays = [ "array", 1, 2 ] %}
+{% assign products = [
   {"name": "Laptop", "price": 1200.00, "in_stock": true},
   {"name": "Mouse", "price": 25.50, "in_stock": true},
   {"name": "Keyboard", "price": 80.00, "in_stock": false}
-]' | parse_json %}
+] %}
 
 ```yml
 object: {{ object | jsonify }}
@@ -68,38 +95,23 @@ arrays: {{ arrays | jsonify }}
 products: {{ products | jsonify }}
 ```
 
-###### controls
-
-```
-{% assign condition = true %}condition :{{ condition }}
-{% if condition %}if.condition : yes
-{%- endif %}
-
-{% assign condition_2 = 'no' %}condition_2 :{{ condition_2 }}
-{% if condition_ %}{%- elsif condition_2 %}elsif.condition_2 : yes
-{%- endif %}
-
-{% assign condition_3 = 'idk' %}condition_3 :{{ condition_3 }}
-{% if condition_ %}{%- else %}else.condition_3 : yes
-{%- endif %}
-
-{% assign condition_4 = 'unique' %}condition_4 :{{ condition_4 }}
-{% unless condition_4 == 'x_unique' %}unless.condition_4 : is not
-{%- endunless %}
-
-{% assign condition_5 = 'when-b' %}condition_5 : {{ condition_5 }}
-{% case condition_5 %}
-case.condition_5 :
-{%- when 'when-a' %} is A
-{%- when 'when-b' %} is B
-{%- endcase %}
-```
-
 ###### loop
 
+{% assign collection_a = [1,2,3,4,5,6,7,8,9] %}
+{% assign collection_b = '1,2,3,4,5,6,7,8,9' %}
+{% assign collection_c = '[1,2,3,4,5,6,7,8,9]' | parse_json %}
+
 ```
-{% assign collection = '[3,4,6,7]' | parse_json %}
-{% for item in collection limit:5 %}item: {{ item }},
+collection_a: {{ collection_a | jsonify }}
+{% for item in collection_a limit:5 %}{{ item }},
+{%- endfor %}
+
+collection_b: {{ collection_b | split: ',' | jsonify }}
+{% for item in collection_b limit:5 %}{{ item }},
+{%- endfor %}
+
+collection_c: {{ collection_c | jsonify }}
+{% for item in collection_c limit:5 %}{{ item }},
 {%- endfor %}
 
 # there is also break and continue.
@@ -116,7 +128,7 @@ Closing with `%-` cause build error.
 {% raw %}
 product.title : {{ product.title | default: 'undefined' }}
 product.description : {{ product.description | default: 'undefined' }}
-{% endraw %}
+{%- endraw %}
 ```
 
 ###### echo
