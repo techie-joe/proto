@@ -13,12 +13,21 @@ There’s a comment block below this line.
 <!-- This HTML comment will not appear in the rendered Markdown -->
 
 {% comment %}This Liquid comment will not appear in the rendered Markdown{% endcomment %}
+{% comment %}
+Another comment
+in multiple
+lines
+{%- endcomment %}
 
 Comment block should not appear in the rendered Markdown.
 
 ###### raw
 
-{% raw %}{{ product.title }}{% endraw %}
+{% raw %}product.title : {{ product.title }}{% endraw %}
+
+{% raw %}
+product.title : {{ product.title }}
+{%- endraw %}
 
 ###### capture
 
@@ -28,12 +37,16 @@ Comment block should not appear in the rendered Markdown.
 
 {{ block }}
 
-###### snippet
+###### render
 
+Github Pages did not support the `raw` tag at the moment. 
+
+{% raw %}
 {% render 'snippet', 
   card_title: "Coffee Maker", 
   card_description: "Brews perfect coffee every time." 
 %}
+{% endraw %}
 
 ###### filters
 
