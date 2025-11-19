@@ -18,7 +18,7 @@ Comment block should not appear in the rendered Markdown.
 
 ###### raw
 
-{% raw %}{{ product.title }}{%- endraw %}
+{% raw %}{{ product.title }}{% endraw %}
 
 ###### capture
 
