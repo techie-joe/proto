@@ -32,7 +32,7 @@ assign: {% assign x = 'x' %}
   description: 'Product description.',
   }
 %}
-{% raw %}product.title : {{ product.title | default: 'undefined' }}{%- endraw %}
+{% raw %}product.title : {{ product.title | default: 'undefined' }}{% endraw %}
 {% raw %}
 product.description : {{ product.description | default: 'undefined' }}
 {%- endraw %}
