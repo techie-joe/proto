@@ -12,7 +12,7 @@ use_footer: false
 
 <h1 id="_hero-title">👔 Techie Joe's Website</h1>
 
-**Welcome to my digital workspace**, this is where I share my latest work and experiments.  
+**Welcome to my digital workspace**, this is where I share my work and experiments.  
 
 <div style="margin-top:3rem"></div>
 
