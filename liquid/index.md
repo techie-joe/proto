@@ -72,9 +72,12 @@ Github Pages did not support the `raw` tag at the moment.
 ###### jsonify
 
 ```js
-{{ { 'key' :  'value' } | jsonify }}
-{{ [ 'key' => 'value' ] | jsonify }}
-{{ { ['array', 1, 2 ] } | jsonify }}
+{% assign object = {'key': 'value'} %}
+{% assign values = [ 'key' => 'value' ] %}
+{% assign arrays = ['array', 1, 2 ] %}
+{{ object | jsonify }}
+{{ values | jsonify }}
+{{ arrays | jsonify }}
 ```
 
 ###### controls
