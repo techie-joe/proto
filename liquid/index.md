@@ -21,44 +21,6 @@ lines
 
 Comment block should not appear in the rendered Markdown.
 
-###### raw
-
-Be carefull when closing the `raw` tag.  
-Closing with `%-` cause build error.  
-
-```liquid
-{% raw %} assign: {% assign x = 'x' %} {% endraw %}
-
-{% assign product = {
-    title: 'Product Title',
-    description: 'Product description.',
-  }
-%}
-{% raw %} product.title : {{ product.title | default: 'undefined' }} {% endraw %}
-{% raw %} product.description : {{ product.description | default: 'undefined' }} {% endraw %}
-```
-
-###### echo
-
-Github Pages did not support the `echo` tag at the moment.
-
-```
-{% raw %} {% echo 'echo' %} {% endraw %}
-```
-
-###### render
-
-Github Pages did not support the `render` tag at the moment. 
-
-```
-{% raw %}
-{% render 'snippet', 
-  card_title: "Coffee Maker", 
-  card_description: "Brews perfect coffee every time." 
-%}
-{% endraw %}
-```
-
 ###### capture
 
 {% capture block %}
@@ -75,66 +37,103 @@ Github Pages did not support the `render` tag at the moment.
 {% assign list = "apple,banana,cherry" %}
 
 ```
-Default         : {{ default | default: '(default)' }}
-Capitalize      : {{ 'capitalize' | capitalize }}
-Uppercase Name  : {{ my_name | upcase }}
-Date Format     : {{ today | date: "%B %d, %Y" }}
-List Size       : {{ list | split: "," | size }}
-Chained Filters : {{ my_name | downcase | replace: "james", "robert" }}
+default     : {{ default | default: '(default)' }}
+upcase      : {{ my_name | upcase }}
+upcase      : {{ my_name | downcase }}
+capitalize  : {{ my_name | capitalize }}
+date        : {{ today | date: "%B %d, %Y" }}
+size        : {{ list | size }}
+split       : {{ list | split: "," | size }}
+chained     : {{ my_name | downcase | replace: "james", "robert" }}
 ```
 
 ###### jsonify
 
-{% assign object = {'key': 'value'} %}
-{% assign values = [ 'key' => 'value' ] %}
-{% assign arrays = ['array', 1, 2 ] %}
+{% assign object = '{ "key": "value" }' | parse_json %}
+{% assign values = '[ "key" => "value" ]' | parse_json %}
+{% assign arrays = '[ "array", 1, 2 ]' | parse_json %}
+{% assign products = '[
+  {"name": "Laptop", "price": 1200.00, "in_stock": true},
+  {"name": "Mouse", "price": 25.50, "in_stock": true},
+  {"name": "Keyboard", "price": 80.00, "in_stock": false}
+]' | parse_json %}
 
 ```yml
 object: {{ object | jsonify }}
+------------------------------
 values: {{ values | jsonify }}
+------------------------------
 arrays: {{ arrays | jsonify }}
+------------------------------
+products: {{ products | jsonify }}
 ```
 
 ###### controls
 
 ```
-{% assign condition = 'yes' %}
-{% if condition %}
-if.condition :{{ condition }}
+{% assign condition = true %}condition :{{ condition }}
+{% if condition %}if.condition : yes
 {%- endif %}
 
-{% assign condition_2 = 'no' %}
-{% if condition_ %}
-{%- elsif condition_2 %}
-elsif.condition_2 :{{ condition_2 }}
+{% assign condition_2 = 'no' %}condition_2 :{{ condition_2 }}
+{% if condition_ %}{%- elsif condition_2 %}elsif.condition_2 : yes
 {%- endif %}
 
-{% assign condition_3 = 'idk' %}
-{% if condition_ %}
-{%- else %}
-else.condition_3 :{{ condition_3 }}
+{% assign condition_3 = 'idk' %}condition_3 :{{ condition_3 }}
+{% if condition_ %}{%- else %}else.condition_3 : yes
 {%- endif %}
 
-{% assign condition_4 = 'unique' %}
-{% unless condition_4 == 'unique' %}condition_4 :{{ condition_4 }}{%- endunless %}
+{% assign condition_4 = 'unique' %}condition_4 :{{ condition_4 }}
+{% unless condition_4 == 'x_unique' %}unless.condition_4 : is not
+{%- endunless %}
 
-{% assign condition_5 = 'when-b' %}
+{% assign condition_5 = 'when-b' %}condition_5 : {{ condition_5 }}
 {% case condition_5 %}
-case :
-{%- when 'when-a' %}condition_5 : {{ condition_5 }}
-{%- when 'when-b' %}condition_5 : {{ condition_5 }}
+case.condition_5 :
+{%- when 'when-a' %} is A
+{%- when 'when-b' %} is B
 {%- endcase %}
 ```
 
 ###### loop
 
 ```
-{% assign collection = [3,4,6,7] %}
-{% for item in collection %}item: {{ item }},{%- endfor %}
-
-{% for item in collection limit:5 %}
-- item: {{ item }}
+{% assign collection = '[3,4,6,7]' | parse_json %}
+{% for item in collection limit:5 %}item: {{ item }},
 {%- endfor %}
 
 # there is also break and continue.
+```
+
+###### raw
+
+`raw` skips liquid rendering. 
+Be carefull when closing the `raw` tag. 
+Closing with `%-` cause build error.  
+
+```liquid
+{% raw %} {% assign x = 'x' %} {% endraw %}
+{% raw %}
+product.title : {{ product.title | default: 'undefined' }}
+product.description : {{ product.description | default: 'undefined' }}
+{% endraw %}
+```
+
+###### echo
+
+Github Pages did not support the `echo` tag at the moment.
+
+```
+{% raw %} {% echo 'echo' %} {% endraw %}
+```
+
+###### render
+
+Github Pages did not support the `render` tag at the moment. 
+
+```
+{% raw %}{% render 'snippet', 
+  card_title: "Coffee Maker", 
+  card_description: "Brews perfect coffee every time." 
+%}{% endraw %}
 ```

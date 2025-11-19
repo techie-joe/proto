@@ -13,9 +13,12 @@ use_footer: true
 ###### Testing
 
 - [techie-joe.github.io](techie-joe.github.io)
-- [Dove themes](https://techie-joe.github.io/dove)
 - [Markdown](md)
 - [Liquid](liquid)
 
-&nbsp;
-{: .mt-6 }
+###### Projects
+
+- [Dove themes](https://techie-joe.github.io/dove)
+
+
+&nbsp;{: .mt-0 }

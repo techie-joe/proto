@@ -12,14 +12,8 @@ use_footer: false
 
 <hr class="hr-html"/>
 
-`hr-one`
+`hr-too`
 
-{: .hr-one }
+---{: .hr-too }
 
-`hr-two`
-
----
-{: .hr-two }
-
-ends
-{: .text-grey.small }
+ends{: .text-grey.small }
