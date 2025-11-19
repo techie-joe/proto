@@ -27,6 +27,7 @@ Be carefull when closing the `raw` tag.
 Closing with `{%- endraw %}` cause build error.  
 Use `{% endraw %}` instead.  
 
+```liquid
 {% raw %}
 assign: {% assign x = 'x' %}
 {% endraw %}
@@ -40,13 +41,13 @@ assign: {% assign x = 'x' %}
 {% raw %}
 product.description : {{ product.description | default: 'undefined' }}
 {% endraw %}
+```
 
 ###### echo
 
 Github Pages did not support the `echo` tag at the moment. 
 
-{% raw %}{% echo 'echo' %}{% endraw %}
-
+`{% raw %}{% echo 'echo' %}{% endraw %}`
 
 ###### capture
 
