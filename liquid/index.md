@@ -23,6 +23,8 @@ Comment block should not appear in the rendered Markdown.
 
 ###### raw
 
+<!-- Be carefull when closing the `raw` tag. -->
+
 {% raw %}
 assign: {% assign x = 'x' %}
 {% endraw %}
@@ -47,14 +49,14 @@ product.description : {{ product.description | default: 'undefined' }}
 
 ###### render
 
-Github Pages did not support the `raw` tag at the moment. 
+Github Pages did not support the `render` tag at the moment. 
 
 {% raw %}
 {% render 'snippet', 
   card_title: "Coffee Maker", 
   card_description: "Brews perfect coffee every time." 
 %}
-{%- endraw %}
+{% endraw %}
 
 ###### filters
 
