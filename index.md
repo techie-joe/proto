@@ -1,7 +1,7 @@
 ---
 title: Home
 use_nav: false
-use_footer: true
+use_footer: false
 ---
 <style>._logo{display:none !important}</style>
 
@@ -22,3 +22,5 @@ use_footer: true
 
 
 &nbsp;{: .mt-0 }
+
+{% include footer.md %}
