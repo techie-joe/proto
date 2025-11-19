@@ -6,9 +6,8 @@
 &bull; [Variables](vars)
 {%- endcapture %}
 
-{% if page.use_footer == false %}
-{%- else %}
-  {% if not page.use_footer contains 'edit_link_only' %}
+{% if page.use_footer == false %}{%- else %}
+  {% if page.use_footer contains 'edit_link_only' %}{%- else %}
   <hr/>{{ footer }}
   {%- endif %}
   {% if site.github.private != true and site.github.license %}
