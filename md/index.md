@@ -1,34 +1,21 @@
 ---
+title: Markdown
+description: Miscellaneous markdown syntaxes.
 use_nav: false
 use_footer: false
 ---
+# {{ page.title }}
 
-# Miscellaneous markdown syntaxes
-
-## Horizontal rules
-
-`---`
+###### Horizontal rules
 
 ---
 
-`<hr class="hr-html"/>`
-
 <hr class="hr-html"/>
-
-.hr-two
 
 ---
 {: .hr-two }
 
-.hr-three
-
-{: .hr-three }
 ---
 
-.hr-four
-
-{: .hr-four }
-
----
-
-<!-- ends -->
+ends
+{: .text-grey style="font-size:.8rem" }
