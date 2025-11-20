@@ -34,12 +34,11 @@ color : {{ color }}{{' > '}}{% assign color = "green" %}{{ color }}
 
 ###### list & loops
 
-{% liquid
-assign list_x   = 'a,m,b,n,c,o,z,y,x' | split: ','
-assign sorted_list_x = list_x | sort
-assign reverse_sorted_list_x = list_x | sort | reverse
-assign sliced_sorted_list_x  = sorted_list_x | slice: 3, 3
-%}
+{% assign list_x   = 'a,m,b,n,c,o,z,y,x' | split: ',' %}
+{% assign sorted_list_x = list_x | sort %}
+{% assign reverse_sorted_list_x = list_x | sort | reverse %}
+{% assign sliced_sorted_list_x  = sorted_list_x | slice: 3, 3 %}
+
 
 ```yml
 list_x   : {{ list_x }} [{{ list_x | size | append: ' items' }}]
@@ -70,12 +69,10 @@ join     : {{ list_a | join: ',' }}
 order    : {{ list_a | first }}{{' ... '}}{{ list_a | last }}
 ```
 
-{% liquid
-assign join_list_a = list_a | join: ','
-assign add_list_a  = 'pear,' | append: join_list_a | append: ',durian'
-assign new_list_a  = add_list_a | split: ','
-assign list_a = new_list_a
-%}
+{% assign join_list_a = list_a | join: ',' %}
+{% assign add_list_a  = 'pear,' | append: join_list_a | append: ',durian' %}
+{% assign new_list_a  = add_list_a | split: ',' %}
+{% assign list_a = new_list_a %}
 
 ```yml
 list_a   : {%  | append: list_a | append: "durian" %}{{' > '}}{{ list_aa }}

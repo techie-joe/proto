@@ -21,7 +21,8 @@ use_footer: false
 - [Dove themes](https://techie-joe.github.io/dove)
 
 
-&nbsp;{: .mt-0 }
+&nbsp;
+{: .mt-0 }
 
 {% capture footer %}
 **Proto's**
@@ -30,6 +31,10 @@ use_footer: false
 &bull; [Posts](posts)
 &bull; [Variables](vars)
 {%- endcapture %}
+
+{{ footer }}
+
+---
 
 {% if page.use_footer == false %}{%- else %}
   {% if page.use_footer contains 'edit_link_only' %}{%- else %}
