@@ -10,7 +10,6 @@ description: Basic Liquid syntaxes on this site.
 {% assign date     = '2005-03-09T20:10:30' %}
 
 ```yml
-# date
 date : {{ date }}
 date : {{ date | date: "%A, %B %d, %Y @ %I:%M:%S %p" }}
 ```
@@ -35,16 +34,25 @@ date : {{ date | date: "%A, %B %d, %Y @ %I:%M:%S %p" }}
 ###### controls
 
 ```
-if true : {% if true %}then{%- endif %}
-elsif true : {% if false %}{%- elsif true %}then{%- endif %}
-else : {% if false %}{%- else %}means (other than true){%- endif %}
+if true : {% if true -%}then{%- endif %}
+elsif true : {% if false -%}{%- elsif true -%}then{%- endif %}
+else : {% if false -%}{%- else -%}means (others){%- endif %}
+
 unless false : {% unless false %}means (other than false){%- endunless %}
-case 'a' : {% case 'a' %}
-{% when 'a' %}is A
-{% when 'b' %}is B
+
+case 'a' : {% case 'a' -%}
+{%- when 'a' -%}is A
 {%- endcase %}
-{% if '' == blank %}Check an blank string with the `blank` object.{%- endif %}
-{% if undefined == empty %}Compare with `empty` to check whether an object exists before accessing any of its attributes.{%- endif %}
+```
+
+###### loops
+
+```liquid
+{% raw %}{% for i in (1..9) limit:5 -%}{{ i }}{% cycle 'odd', 'even' %}{%- endfor %}{% endraw %}
+```
+
+```
+{% for i in (1..9) limit:5 -%}{{ i }}{%- endfor %}
 ```
 
 ###### capture
@@ -69,3 +77,9 @@ lines too
 {%- endcomment %}
 
 Comment block should not appear in the rendered Markdown.
+
+{% comment %}
+###### misc
+{% if '' == blank %}Check a blank string with the `blank` object.{%- endif %}
+{% if undefined == empty %}Compare with `empty` to check whether an object exists before accessing any of its attributes.{%- endif %}
+{% endcomment %}

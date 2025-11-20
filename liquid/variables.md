@@ -4,7 +4,7 @@ description: Handling Liquid variables on this site.
 ---
 # {{ page.title }}
 
-###### assign values
+###### strings
 
 ```liquid
 {% raw %}{% assign var = value_or_expression | filter: 'filter_expression' %}{% endraw %}
@@ -16,22 +16,25 @@ default : {{ undefined | default: '(undefined)' }}
 nil     : {{ nil | default: '(nil is false and renders nothing)' }}
 ```
 
-{% assign string   = 'jAmEs pEtErSoN' %}
+{% assign string   = 'jAmEs r pEtErSoN.' | remove: '.' %}
 {% assign color    = 'blue' %}
 
 ```yml
 # string
-string      : {{ string }} [{{ string | size | append: ' characters' }}]
-upcase      : {{ string | upcase }}
-downcase    : {{ string | downcase }}
-capitalize  : {{ string | capitalize }}
-replace     : {{ string | capitalize | replace: "peterson", "Rodney" }}
+string        : {{ string }} [{{ string | size | append: ' characters' }}]
+upcase        : {{ string | upcase }}
+downcase      : {{ string | downcase }}
+capitalize    : {{ string | capitalize }}
+replace       : {{ string | capitalize | replace: "peterson", "Rodney" }}
+truncate      : {{ string | truncate: 4 }}
+remove 'r'    : {{ string | remove: 'r' }}
+remove 'r '   : {{ string | remove: 'r ' }}
 
 # color
 color : {{ color }}{{' > '}}{% assign color = "green" %}{{ color }}
 ```
 
-###### list & loops
+###### list
 
 {% assign list_x   = 'a,m,b,n,c,o,z,y,x' | split: ',' %}
 {% assign sorted_list_x = list_x | sort %}
@@ -43,10 +46,7 @@ list_x   : {{ list_x }} [{{ list_x | size | append: ' items' }}]
 jsonify  : {{ list_x | jsonify }}
 join     : {{ list_x | join: ',' }}
 order    : {{ list_x | first }}{{' ... '}}{{ list_x | last }}
-
-{{'# list_x  : '}}{% for item in list_x %}[{{ item }}]{{' '}}{%- endfor %}
-
-{{'# limit:3 : '}}{% for item in list_x limit:3 %}[{{ item }}]{{' '}}{%- endfor %}
+list_x   : {{'# '}}{% for item in list_x %}[{{ item }}]{{' '}}{%- endfor %}
 
 sorted_list_x         : {{ sorted_list_x | jsonify }}
 order                 : {{ sorted_list_x | first }}{{' ... '}}{{ sorted_list_x | last }}

@@ -31,9 +31,7 @@ use_footer: false
 &bull; [Variables](vars)
 {%- endcapture %}
 
-{{ footer }}
-
----
+<hr/>{{ footer }}
 
 {% if page.use_footer == false %}{%- else %}
   {% if page.use_footer contains 'edit_link_only' %}{%- else %}
