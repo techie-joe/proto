@@ -1,9 +1,36 @@
 ---
-title: Basic Liquid Syntaxes
+title: Liquid basics
 description: Basic Liquid syntaxes on this site.
 ---
 # {{ page.title }}
 
+###### strings
+
+```liquid
+{% raw %}{% assign var = value_or_expression | filter: 'filter_expression' %}{% endraw %}
+```
+
+```yml
+var     : {{ var | default: '(value_or_expression)' }}
+default : {{ undefined | default: '(undefined)' }}
+nil     : {{ nil | default: '(nil is false and renders nothing)' }}
+```
+
+{% assign string   = 'jAmEs r pEtErSoN' %}
+{% assign color    = 'blue' %}
+
+```yml
+string        : {{ string }} [{{ string | size | append: ' characters' }}]
+upcase        : {{ string | upcase }}
+downcase      : {{ string | downcase }}
+capitalize    : {{ string | capitalize }}
+replace       : {{ string | capitalize | replace: "peterson", "Rodney" }}
+truncate      : {{ string | truncate: 7 }}
+# remove 'r'  : {{ string | remove: 'r' }}
+# remove 'r ' : {{ string | remove: 'r ' }}
+
+color : {{ color }}{{' > '}}{% assign color = "green" %}{{ color }}
+```
 
 ###### date
 
@@ -52,8 +79,10 @@ case 'a' : {% case 'a' -%}
 ```
 
 ```
-{% for i in (1..9) limit:5 -%}{{ i }}{%- endfor %}
+{% for i in (1..9) limit:5 -%}{{ i }}{{' '}}{%- endfor %}
 ```
+
+> Use {% raw %}`{% break %}` and `{% continue %}` to get out of a loop.{% endraw %}
 
 ###### capture
 

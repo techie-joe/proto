@@ -1,40 +1,8 @@
 ---
-title: Handling Liquid Variables
-description: Handling Liquid variables on this site.
+title: Liquid list
+description: Handling list using Liquid on this site.
 ---
 # {{ page.title }}
-
-###### strings
-
-```liquid
-{% raw %}{% assign var = value_or_expression | filter: 'filter_expression' %}{% endraw %}
-```
-
-```yml
-var     : {{ var | default: '(value_or_expression)' }}
-default : {{ undefined | default: '(undefined)' }}
-nil     : {{ nil | default: '(nil is false and renders nothing)' }}
-```
-
-{% assign string   = 'jAmEs r pEtErSoN.' | remove: '.' %}
-{% assign color    = 'blue' %}
-
-```yml
-# string
-string        : {{ string }} [{{ string | size | append: ' characters' }}]
-upcase        : {{ string | upcase }}
-downcase      : {{ string | downcase }}
-capitalize    : {{ string | capitalize }}
-replace       : {{ string | capitalize | replace: "peterson", "Rodney" }}
-truncate      : {{ string | truncate: 7 }}
-# remove 'r'  : {{ string | remove: 'r' }}
-# remove 'r ' : {{ string | remove: 'r ' }}
-
-# color
-color : {{ color }}{{' > '}}{% assign color = "green" %}{{ color }}
-```
-
-###### list
 
 {% assign list_x   = 'a,m,b,n,c,o,z,y,x' | split: ',' %}
 {% assign sorted_list_x = list_x | sort %}
@@ -106,5 +74,3 @@ products.laptop  : {{ products.laptop | jsonify }}
 {{'# '}}{% for item in products limit:2 %}[{{ item }}],
 {%- endfor %}
 ```
-
-Use {% raw %}`{% break %}` and `{% continue %}` to get out of a loop.{% endraw %}

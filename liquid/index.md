@@ -4,8 +4,8 @@ description: Liquid syntaxes on this site.
 ---
 # {{ page.title }}
 
-###### [Handling Liquid Variables](variables)
+###### [Liquid basics](basic)
 
-###### [Basic Liquid Syntaxes](basic)
+###### [Liquid list](list)
 
 ###### [Unsupported Liquid Syntaxes](unsupported)
