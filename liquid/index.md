@@ -14,7 +14,8 @@ use_footer: false
 
 ```yml
 var     : {{ var | default: '(value_or_expression)' }}
-default : {{ undefined | default: '(default)' }}
+default : {{ undefined | default: '(undefined)' }}
+nil     : {{ nil | default: '(nil is false and renders nothing)' }}
 ```
 
 {% assign string   = 'jAmEs pEtErSoN' %}
@@ -150,6 +151,8 @@ case 'a' : {% case 'a' %}
 {% when 'a' %}is A
 {% when 'b' %}is B
 {%- endcase %}
+{% if '' == blank %}Check an blank string with the `blank` object.{%- endif %}
+{% if undefined == empty %}Compare with `empty` to check whether an object exists before accessing any of its attributes.{%- endif %}
 ```
 
 ###### capture
