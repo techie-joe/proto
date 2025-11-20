@@ -26,9 +26,9 @@ upcase        : {{ string | upcase }}
 downcase      : {{ string | downcase }}
 capitalize    : {{ string | capitalize }}
 replace       : {{ string | capitalize | replace: "peterson", "Rodney" }}
-truncate      : {{ string | truncate: 4 }}
-remove 'r'    : {{ string | remove: 'r' }}
-remove 'r '   : {{ string | remove: 'r ' }}
+truncate      : {{ string | truncate: 7 }}
+# remove 'r'  : {{ string | remove: 'r' }}
+# remove 'r ' : {{ string | remove: 'r ' }}
 
 # color
 color : {{ color }}{{' > '}}{% assign color = "green" %}{{ color }}
