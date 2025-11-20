@@ -6,21 +6,18 @@ use_footer: false
 ---
 # {{ page.title }}
 
+###### assign values
+
 ```yml
-{% raw %}{% assign var = value_or_expression %}{% endraw %}
-default : {{ undefined | default: '(default)' }}
+# {% raw %}{% assign var = value_or_expression | filter: 'filter_expression' %}{% endraw %}
 var     : {{ var | default: '(value_or_expression)' }}
+default : {{ undefined | default: '(default)' }}
 ```
 
-{% assign date     = '2025-11-19T10:30:00' %}
 {% assign string   = 'jAmEs pEtErSoN' %}
 {% assign color    = 'blue' %}
 
 ```yml
-# date
-date : {{ date }}
-date : {{ date | date: "%B %d, %Y" }}
-
 # string
 string      : {{ string }}
 string.size : {{ string | size }}
@@ -89,6 +86,29 @@ products.laptop  : {{ products.laptop | jsonify }}
 ```
 
 Use {% raw %}`{% break %}` and `{% continue %}` to get out of a loop.{% endraw %}
+
+###### date
+
+{% assign date     = '2025-11-19T20:10:30' %}
+
+```yml
+# date
+date : {{ date }}
+date : {{ date | date: "%B %d, %Y @ %h:%m:%s" }}
+```
+
+| -- | :-------------------------------- | ----- | 
+| %B | Full month | November |
+| %b | Abbreviated month | Nov |
+| %m | Month as a padded number (01-12) | 03
+| %Y | Full year (4 digits) | 2005
+| %y | Year as a padded number (2 digits) | 05
+| %H | 24-hour clock (00-23) | 21
+| %I | 12-hour clock (01-12) | 06
+| %M | Minute as a padded number (00-59) | 01
+| %S | Second as a padded number (00-59) | 02
+| %p | AM/PM indicator (uppercase) | PM
+{: .simple }
 
 ###### controls
 
