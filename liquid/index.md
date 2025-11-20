@@ -6,78 +6,71 @@ use_footer: false
 ---
 # {{ page.title }}
 
-###### assign
-
 `{% raw %}{% assign var = value_or_expression %}{% endraw %}`
-{% assign string  = "jAmEs pEtErSoN" %}
-{% assign date    = "2025-11-19T10:30:00" %}
-{% assign list    = "apple,banana,cherry" %}
-{% assign color   = "red" %}{% assign color   = "blue" %}
-{% assign object  = {pen} %}{% assign color   = "blue" %}
+{% assign date     = '2025-11-19T10:30:00' %}
+{% assign string   = 'jAmEs pEtErSoN' %}
+{% assign color    = 'blue' %}
+{% assign list_a   = 'apple,banana,cherry' | split: ',' %}
+{% assign list_b   = '[pen,gum,air,tin,can]' | parse_json %}
+{% assign products = '[
+  "laptop" => {"name": "Ace", "price": 1200.00, "in_stock": true},
+  "mouse" => {"name": "Mice", "price": 25.50, "in_stock": true},
+  "keyboard" => {"name": "Keys", "price": 80.90, "in_stock": false}
+]' | parse_json %}
 
 ```yml
+default : {{ undefined | default: '(default)' }}
 var     : {{ var | default: '(value_or_expression)' }}
-string  : {{ string }}
-date    : {{ date }}
-list    : {{ list }}
-color   : {{ color }}
-```
 
-###### filters
+# date
+date : {{ date }}
+date : {{ date | date: "%B %d, %Y" }}
 
-```yml
-default     : {{ undefined | default: '(default)' }}
+# string
+string      : {{ string }}
+string.size : {{ string | size }}
 upcase      : {{ string | upcase }}
 downcase    : {{ string | downcase }}
 capitalize  : {{ string | capitalize }}
 replace     : {{ string | capitalize | replace: "peterson", "Rodney" }}
-date        : {{ date | date: "%B %d, %Y" }}
-size        : {{ list | size }} (string length)
-split       : {{ list | split: "," | size }} (array size)
-```
 
-###### jsonify
+# color
+color : {{ color }}
+color : {% assign color = "green" %}{{ color }}
 
-{% assign object = '{ "key": "value" }' | parse_json %}
-{% assign values = '[ "key" => "value" ]' | parse_json %}
-{% assign arrays = '[ "array", 1, 2 ]' | parse_json %}
-{% assign products = '[
-  {"name": "Laptop", "price": 1200.00, "in_stock": true},
-  {"name": "Mouse", "price": 25.50, "in_stock": true},
-  {"name": "Keyboard", "price": 80.00, "in_stock": false}
-]' | parse_json %}
+# list_a
+list_a         : {{ list_a }}
+list_a.size    : {{ list_a | size }}
+list_a.jsonify : {{ list_a | jsonify }}
+list_a[0]      : {{ list_a[0] }}
+list_a[3]      : {{ list_a[3] }}{% assign list_a[3] = "pear" %}{{ list_a[1] }}
 
-```yml
-object: {{ object | jsonify }}
-------------------------------
-values: {{ values | jsonify }}
-------------------------------
-arrays: {{ arrays | jsonify }}
-------------------------------
-products: {{ products | jsonify }}
-```
-
-###### loop
-
-{% assign collection_a = [1,2,3,4,5,6,7,8,9] %}
-{% assign collection_b = '1,2,3,4,5,6,7,8,9' %}
-{% assign collection_c = '[1,2,3,4,5,6,7,8,9]' | parse_json %}
-
-```
-collection_a: {{ collection_a | jsonify }}
-{% for item in collection_a limit:5 %}{{ item }},
+{% for item in list_a limit:5 %}[{{ item }}],
 {%- endfor %}
 
-collection_b: {{ collection_b | split: ',' | jsonify }}
-{% for item in collection_b limit:5 %}{{ item }},
+# list_b
+list_b         : {{ list_b }}
+list_b.size    : {{ list_b | size }}
+list_b.jsonify : {{ list_b | jsonify }}
+list_b[0]      : {{ list_b[0] }}
+list_b[1]      : {{ list_b[1] }}{% assign list_b[1] = "bin" %}{{ list_b[1] }}
+
+{% for item in list_b limit:5 %}[{{ item }}],
 {%- endfor %}
 
-collection_c: {{ collection_c | jsonify }}
-{% for item in collection_c limit:5 %}{{ item }},
+# products
+products         : {{ list_b }}
+products.size    : {{ list_b | size }}
+products.jsonify : {{ list_b | jsonify }}
+products[0]      : {{ list_b[0] }}
+products.laptop  : {{ products.laptop | jsonify }}
+
+{% for item in products limit:2 %}[{{ item }}],
 {%- endfor %}
 
-# there is also break and continue.
 ```
+
+Use {% raw %}`{% break %}` and `{% continue %}` to get out of a loop.{% endraw %}
 
 ###### controls
 
