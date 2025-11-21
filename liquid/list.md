@@ -1,6 +1,6 @@
 ---
-title: Liquid list
-description: Handling list using Liquid on this site.
+title: Handling list
+description: Handling list using Liquid.
 ---
 # {{ page.title }}
 
@@ -14,48 +14,31 @@ list_x   : {{ list_x }} [{{ list_x | size | append: ' items' }}]
 jsonify  : {{ list_x | jsonify }}
 join     : {{ list_x | join: ',' }}
 order    : {{ list_x | first }}{{' ... '}}{{ list_x | last }}
-list_x   : {{'# '}}{% for item in list_x %}[{{ item }}]{{' '}}{%- endfor %}
-
-sorted_list_x         : {{ sorted_list_x | jsonify }}
-order                 : {{ sorted_list_x | first }}{{' ... '}}{{ sorted_list_x | last }}
-
-reverse_sorted_list_x : {{ reverse_sorted_list_x | jsonify }}
-order                 : {{ reverse_sorted_list_x | first }}{{' ... '}}{{ reverse_sorted_list_x | last }}
-
-sliced_sorted_list_x  : {{ sliced_sorted_list_x | jsonify }}
-order                 : {{ sliced_sorted_list_x | first }}{{' ... '}}{{ sliced_sorted_list_x | last }}
+loop     : # {% for item in list_x %}[{{ item }}]{{' '}}{%- endfor %}
+sort     : {{ list_x | sort | jsonify }}
+reverse  : {{ list_x | reverse | jsonify }}
+slice    : {{ list_x | sort | slice: 3, 3 | jsonify }}
 ```
 
-{% assign list_a   = 'apple,banana,cherry' | split: ',' %}
+{% assign list_a = 'apple,banana,cherry' | split: ',' %}
 
 ```yml
-list_a   : {{ list_a }} [{{ list_a | size | append: ' items' }}]
-jsonify  : {{ list_a | jsonify }}
-join     : {{ list_a | join: ',' }}
-order    : {{ list_a | first }}{{' ... '}}{{ list_a | last }}
+list_a   : {{ list_a | jsonify }} [{{ list_a | size | append: ' items' }}]
 ```
 
-{% assign join_list_a = list_a | join: ',' %}
-{% assign list_a = 'pear,' | append: join_list_a | append: ',durian' | split: ',' %}
+{% assign list_a = list_a | join: ',' | prepend: 'pear,' | append: ',durian' | split: ',' %}
 
 ```yml
-list_a   : {{ list_a }} [{{ list_a | size | append: ' items' }}]
-jsonify  : {{ list_a | jsonify }}
-join     : {{ list_a | join: ',' }}
-order    : {{ list_a | first }}{{' ... '}}{{ list_a | last }}
+list_a   : {{ list_a | jsonify }} [{{ list_a | size | append: ' items' }}]
 ```
 
 {% assign list_b   = '["pen","gum","tin"]' | parse_json %}
 
 ```yml
-list_b          : {{ list_b }}
-list_b.jsonify  : {{ list_b | jsonify }}
-list_b.size     : {{ list_b | size }}
-# list_b.0       : {{ list_b[0] }}{% assign list_b[0] = "bin" %}{{' > '}}{{ list_b[0] }}
-# list_b.3       : {{ list_b[3] }}{% assign list_b[3] = "can" %}{{' > '}}{{ list_b[3] }}
-list_b.jsonify : {{ list_b | jsonify }}
+list_b   : {{ list_b }} [{{ list_b | size | append: ' items' }}]
+jsonify  : {{ list_b | jsonify }}
 
-{{'# '}}{% for item in list_b limit:3 %}[{{ item }}]{{' '}}{%- endfor %}
+{{'# '}}{% for item in list_b %}[{{ item }}]{{' '}}{%- endfor %}
 ```
 
 {% assign products = '[
@@ -65,11 +48,7 @@ list_b.jsonify : {{ list_b | jsonify }}
 ]' | parse_json %}
 
 ```yml
-products         : {{ products }}
-products.size    : {{ products | size }}
-products.jsonify : {{ products | jsonify }}
-products[0]      : {{ products[0] }}
-products.laptop  : {{ products.laptop | jsonify }}
+products         : {{ products | jsonify }} [{{ products | size | append: ' items' }}]
 
 {{'# '}}{% for item in products limit:2 %}[{{ item }}],
 {%- endfor %}

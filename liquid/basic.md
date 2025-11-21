@@ -1,10 +1,10 @@
 ---
 title: Liquid basics
-description: Basic Liquid syntaxes on this site.
+description: Basic Liquid syntaxes.
 ---
 # {{ page.title }}
 
-###### strings
+###### assign values
 
 ```liquid
 {% raw %}{% assign var = value_or_expression | filter: 'filter_expression' %}{% endraw %}
@@ -15,6 +15,17 @@ var     : {{ var | default: '(value_or_expression)' }}
 default : {{ undefined | default: '(undefined)' }}
 nil     : {{ nil | default: '(nil is false and renders nothing)' }}
 ```
+
+###### number
+
+{% assign number = 0 }
+
+```yml
+increment: {% increment number %}{{ number }}
+decrement: {% decrement number %}{{ number }}
+```
+
+###### strings
 
 {% assign string   = 'jAmEs r pEtErSoN' %}
 {% assign color    = 'blue' %}
@@ -28,6 +39,8 @@ replace       : {{ string | capitalize | replace: "peterson", "Rodney" }}
 truncate      : {{ string | truncate: 7 }}
 # remove 'r'  : {{ string | remove: 'r' }}
 # remove 'r ' : {{ string | remove: 'r ' }}
+prepend       : {{ string | prepend: 'Mr.' }}
+append        : {{ string | append: '(Senior)' }}
 
 color : {{ color }}{{' > '}}{% assign color = "green" %}{{ color }}
 ```
@@ -60,7 +73,7 @@ date : {{ date | date: "%A, %B %d, %Y @ %I:%M:%S %p" }}
 
 ###### controls
 
-```
+```liquid
 if true : {% if true -%}then{%- endif %}
 elsif true : {% if false -%}{%- elsif true -%}then{%- endif %}
 else : {% if false -%}{%- else -%}means (others){%- endif %}
@@ -70,16 +83,39 @@ unless false : {% unless false %}means (other than false){%- endunless %}
 case 'a' : {% case 'a' -%}
 {%- when 'a' -%}is A
 {%- endcase %}
+
+{% assign blank_string = '' %}{% if blank_string == blank %}Check a blank string with the `blank` object.{%- endif %}
+{% if undefined == empty %}Compare with `empty` to check whether an object exists before accessing any of its attributes.{%- endif %}
+```
+
+{% comment %}
+{% endcomment %}
+
+###### arrays
+
+{% assign numbers = (1..9) %}
+{% assign arrays  = '[ "pen", 0.9, true ]' | parse_json %}
+{% assign values  = '[ "key" => "value" ]' | parse_json %}
+{% assign objects = '{ "key" :  "value" }' | parse_json %}
+
+```yml
+numbers  : {{ numbers | jsonify }} [{{ numbers | size | append: ' items' }}]
+arrays   : {{ arrays  | jsonify }} [{{ arrays  | size | append: ' items' }}]
+values   : {{ values  | jsonify }} [{{ values  | size | append: ' items' }}]
+objects  : {{ objects | jsonify }} [{{ objects | size | append: ' items' }}]
 ```
 
 ###### loops
 
-```liquid
-{% raw %}{% for i in (1..9) limit:5 -%}{{ i }}{% cycle 'odd', 'even' %}{%- endfor %}{% endraw %}
-```
+{% assign _limit = 5 %}
+
+{% comment %}
+{% for i in numbers limit:_limit %}{{ i }} {% cycle 'odd', 'even' %}, {% endfor %}
+{% endcomment %}
 
 ```
-{% for i in (1..9) limit:5 -%}{{ i }}{{' '}}{%- endfor %}
+{% for i in numbers limit:_limit %}{{ i }} {% cycle 'odd', 'even' %}, {% endfor %}
+{% for i in undefined %} first_expression {% else %} second_expression {% endfor %}
 ```
 
 > Use {% raw %}`{% break %}` and `{% continue %}` to get out of a loop.{% endraw %}
@@ -105,10 +141,4 @@ in multiple
 lines too
 {%- endcomment %}
 
-Comment block should not appear in the rendered Markdown.
-
-{% comment %}
-###### misc
-{% if '' == blank %}Check a blank string with the `blank` object.{%- endif %}
-{% if undefined == empty %}Compare with `empty` to check whether an object exists before accessing any of its attributes.{%- endif %}
-{% endcomment %}
+Comment block will not appear in the rendered Markdown.
