@@ -32,7 +32,3 @@ use_footer: false
 {%- endcapture %}
 
 <hr/>{{ footer }}
-
----
-
-{% include footer.md %}

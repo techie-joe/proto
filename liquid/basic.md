@@ -74,11 +74,12 @@ date : {{ date | date: "%A, %B %d, %Y @ %I:%M:%S %p" }}
 ###### controls
 
 ```liquid
-if true : {% if true -%}then{%- endif %}
-elsif true : {% if false -%}{%- elsif true -%}then{%- endif %}
-else : {% if false -%}{%- else -%}means (others){%- endif %}
+if true : {% if true -%} then {%- endif %}
+elsif true : {% if false -%}  {%- elsif true -%} then {%- endif %}
+else : {% if false -%}  {%- else -%} means (others) {%- endif %}
 
-unless false : {% unless false %}means (other than false){%- endunless %}
+unless true  : {% unless true  -%} then (not true)  {%- else -%} : else : it is true  {%- endunless %}
+unless false : {% unless false -%} then (not false) {%- else -%} : else : it is false {%- endunless %}
 
 case 'a' : {% case 'a' -%}
 {%- when 'a' -%}is A
