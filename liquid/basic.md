@@ -142,3 +142,7 @@ lines too
 {%- endcomment %}
 
 Comment block will not appear in the rendered Markdown.
+
+---
+
+{% include_relative _nav.md %}

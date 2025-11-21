@@ -34,3 +34,7 @@ Github Pages does not support `render` at the moment.
   card_description: "Brews perfect coffee every time." 
 %}{% endraw %}
 ```
+
+---
+
+{% include_relative _nav.md %}
