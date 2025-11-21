@@ -18,7 +18,7 @@ nil     : {{ nil | default: '(nil is false and renders nothing)' }}
 
 ###### number
 
-{% assign number = 0 }
+{% assign number = 0 %}
 
 ```yml
 increment: {% increment number %}{{ number }}
@@ -84,19 +84,19 @@ case 'a' : {% case 'a' -%}
 {%- when 'a' -%}is A
 {%- endcase %}
 
-{% assign blank_string = '' %}{% if blank_string == blank %}Check a blank string with the `blank` object.{%- endif %}
-{% if undefined == empty %}Compare with `empty` to check whether an object exists before accessing any of its attributes.{%- endif %}
-```
+# Check a blank string with the `blank` object.
+{% if '' == blank -%} works {%- else -%} not working {%- endif %}
 
-{% comment %}
-{% endcomment %}
+# Compare with `empty` to check whether an object exists before accessing any of its attributes.
+{% if undefined == empty -%} works {%- else -%} not working {%- endif %}
+```
 
 ###### arrays
 
 {% assign numbers = (1..9) %}
-{% assign arrays  = '[ "pen", 0.9, true ]' | parse_json %}
-{% assign values  = '[ "key" => "value" ]' | parse_json %}
-{% assign objects = '{ "key" :  "value" }' | parse_json %}
+{% assign arrays  = '[ "pen", 0.9, true ]' | parse_json | jsonify %}
+{% assign values  = '[ "key" => "value" ]' | parse_json | jsonify %}
+{% assign objects = '{ "key" :  "value" }' | parse_json | jsonify %}
 
 ```yml
 numbers  : {{ numbers | jsonify }} [{{ numbers | size | append: ' items' }}]
@@ -115,7 +115,7 @@ objects  : {{ objects | jsonify }} [{{ objects | size | append: ' items' }}]
 
 ```
 {% for i in numbers limit:_limit %}{{ i }} {% cycle 'odd', 'even' %}, {% endfor %}
-{% for i in undefined %} first_expression {% else %} second_expression {% endfor %}
+else in for : {% for i in undefined -%} not working {%- else -%} works {%- endfor %}
 ```
 
 > Use {% raw %}`{% break %}` and `{% continue %}` to get out of a loop.{% endraw %}

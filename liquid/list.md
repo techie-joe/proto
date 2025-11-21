@@ -4,10 +4,11 @@ description: Handling list using Liquid.
 ---
 # {{ page.title }}
 
-{% assign list_x   = 'a,m,b,n,c,o,z,y,x' | split: ',' %}
-{% assign sorted_list_x = list_x | sort %}
-{% assign reverse_sorted_list_x = list_x | sort | reverse %}
-{% assign sliced_sorted_list_x  = sorted_list_x | slice: 3, 3 %}
+{% assign list_x = 'a,m,b,n,c,o,z,y,x' | split: ',' %}
+
+```liquid
+{% raw %}{% assign list_x = 'a,m,b,n,c,o,z,y,x' | split: ',' %}{% endraw %}
+```
 
 ```yml
 list_x   : {{ list_x }} [{{ list_x | size | append: ' items' }}]
@@ -22,17 +23,25 @@ slice    : {{ list_x | sort | slice: 3, 3 | jsonify }}
 
 {% assign list_a = 'apple,banana,cherry' | split: ',' %}
 
+```liquid
+{% raw %}{% assign list_a = 'apple,banana,cherry' | split: ',' %}{% endraw %}
+```
+
 ```yml
 list_a   : {{ list_a | jsonify }} [{{ list_a | size | append: ' items' }}]
 ```
 
 {% assign list_a = list_a | join: ',' | prepend: 'pear,' | append: ',durian' | split: ',' %}
 
+```liquid
+{% raw %}{% assign list_a = list_a | join: ',' | prepend: 'pear,' | append: ',durian' | split: ',' %}{% endraw %}
+```
+
 ```yml
 list_a   : {{ list_a | jsonify }} [{{ list_a | size | append: ' items' }}]
 ```
 
-{% assign list_b   = '["pen","gum","tin"]' | parse_json %}
+{% assign list_b   = '["pen","gum","tin"]' | parse_json | jsonify %}
 
 ```yml
 list_b   : {{ list_b }} [{{ list_b | size | append: ' items' }}]
@@ -45,11 +54,11 @@ jsonify  : {{ list_b | jsonify }}
   "laptop"   => {"name": "Ace",  "price": 1200.00, "in_stock": true},
   "mouse"    => {"name": "Mice", "price": 25.50,   "in_stock": true},
   "keyboard" => {"name": "Keys", "price": 80.90,   "in_stock": false}
-]' | parse_json %}
+]' | parse_json | jsonify %}
 
 ```yml
-products         : {{ products | jsonify }} [{{ products | size | append: ' items' }}]
+products : {{ products | jsonify }} [{{ products | size | append: ' items' }}]
+products.laptop : {{ products.laptop | jsonify }}
 
-{{'# '}}{% for item in products limit:2 %}[{{ item }}],
-{%- endfor %}
+{{'# '}}{% for item in products %}[{{ item }}],{%- endfor %}
 ```
