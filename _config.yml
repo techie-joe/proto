@@ -19,7 +19,7 @@ author        : Techie Joe
 year          : 2025
 
 base_url      : '/proto'
-home_url      : '/proto/md'
+home_url      : '/proto'
 
 lang          : 'en-US'
 theme_color   : '#222'

@@ -7,27 +7,16 @@ use_footer: false
 # {{ page.title }}
 
 ```yml
-page.title         : {{ page.title }}
-page.description   : {{ page.description }}
-page.layout        : {{ page.layout }}
+page.title         : {{ page.title | default: '(undefined)' }}
+page.description   : {{ page.description | default: '(undefined)' }}
+page.layout        : {{ page.layout | default: '(undefined)' }}
 ```
 
 ```yml
-layout: {{ layout | jsonify }}
+site.title         : {{ site.title | default: '(undefined)' }}
+site.description   : {{ site.description | default: '(undefined)' }}
 ```
 
 ```yml
-site.title         : {{ site.title }}
-site.description   : {{ site.description }}
-```
-
-###### assign
-
-{% assign nick = 'nik' %}
-{% assign layout.who = 'nik' | append: 'ahmad' %}
-{% assign page.title = 'New Title' %}
-```yml
-nick       : {{ nick }}
-layout.who : {{ layout.who }}
-page.title : {{ page.title }}
+layout             : {{ layout | jsonify }}
 ```
