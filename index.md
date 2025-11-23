@@ -12,13 +12,10 @@ use_nav: false
 
 - [techie-joe.github.io](techie-joe.github.io)
 - [Liquid](liquid)
-- [Markdown](md)
-- [404](404)
 
 ###### Projects
 
 - [Dove themes](https://techie-joe.github.io/dove)
-
 
 &nbsp;
 {: .mt-0 }

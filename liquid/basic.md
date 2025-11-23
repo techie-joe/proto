@@ -2,6 +2,9 @@
 title: Liquid basics
 description: Basic Liquid syntaxes.
 ---
+{% capture nav_liquid %}{% include_relative nav_liquid.md %}{% endcapture %}
+<nav class="._nav">{{ nav_liquid | markdownify }}</nav>
+
 # {{ page.title }}
 
 ###### assign values
@@ -18,7 +21,7 @@ nil     : {{ nil | default: '(nil is false and renders nothing)' }}
 
 ###### strings
 
-{%- assign string   = 'jAmEs r pEtErSoN.' -%}
+{%- assign string   = 'jAmEs r pEtErSoN.' %}
 
 ```yml
 string        : {{ string }} [{{ string | size | append: ' characters' }}]
@@ -38,7 +41,7 @@ truncate      : {{ string | truncate: 15 }}
 
 ###### date
 
-{%- assign date     = '2005-03-09T20:10:30' -%}
+{%- assign date     = '2005-03-09T20:10:30' %}
 
 ```yml
 date : {{ date }}
@@ -85,7 +88,7 @@ case 'a' : {% case 'a' -%}
 
 ###### arrays
 
-{%- assign numbers = (1..9) -%}
+{%- assign numbers = (1..9) %}
 
 ```yml
 numbers  : {{ numbers | jsonify }} [{{ numbers | size | append: ' items' }}]
@@ -117,7 +120,7 @@ objects  : {{ objects | jsonify }} [{{ objects | size | append: ' items' }}]
 
 ###### loops
 
-{%- assign _limit = 5 -%}
+{%- assign _limit = 5 %}
 
 {% comment %}
 {% for i in numbers limit:_limit %}{{ i }} {% cycle 'odd', 'even' %}, {% endfor %}

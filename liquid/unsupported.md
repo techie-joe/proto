@@ -2,6 +2,9 @@
 title: Unsupported Liquid Syntaxes
 description: Unsupported Liquid syntaxes on this site.
 ---
+{% capture nav_liquid %}{% include_relative nav_liquid.md %}{% endcapture %}
+<nav class="._nav">{{ nav_liquid | markdownify }}</nav>
+
 # {{ page.title }}
 
 ###### echo
