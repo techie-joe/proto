@@ -9,7 +9,7 @@ use_footer: false
 
 **{{ page.description }}**
 
-For most people, ***"Hello World"*** is just a phrase that's totally basic, maybe even a little cliche. But if you're actually building things, if you're a software engineer like me, those two tokens are the real starting point. The second they render correctly on screen, the portal swings wide open. That's the moment I can confidently confirm that the machine is listening.
+For most people, ***"Hello World"*** is just a phrase that's totally basic, maybe even a little cliche. But if you're actually building things, those two tokens are the real starting point. The second they render correctly on my screen, the portal swings wide open. That's the moment I can confidently confirm that the machine is listening.
 {: .indentx.text-justify }
 
 ---
@@ -30,7 +30,7 @@ For the global community of developers who understand it, ***"Hello World"*** is
 > That moment humbles me. For me: ***"Hello World is the first commit, not the final release."***
 {: .mb-5 }
 
-So, when I type ***"Hello World"*** .. know this: I'm not testing something. I'm initiating creation, driving innovation, and transforming the digital landscape. It's my launch sequence, and behind those **two perfect little words** is the core logic of everything I build.
+So, when I type ***"Hello World"*** .. know this: I'm not testing something. I'm initiating a creation, driving innovation, and transforming the digital landscape. It's my launch sequence. Behind those **two perfect little words** is the core logic of everything I build.
 {: .indent.text-justify }
 
 {% include_relative footer.md %}

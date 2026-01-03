@@ -1,30 +1,40 @@
 # the location of the remote_theme.
 remote_theme: techie-joe/dove
+# theme: dove
 
 # add jekyll-remote-theme to the plugins list.
 plugins:
-- jekyll-remote-theme
-# - jekyll-paginate
-# - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-github-metadata
+  - jekyll-remote-theme
+  # - jekyll-paginate
+  # - jekyll-redirect-from
+  # - jekyll-sitemap
+  # - jekyll-feed
+  # - jemoji
 
-version       : '0.0.2'
-revision      : '2511.06'
+version       : '0.0.3'
+revision      : '2601.3'
 
 title         : Proto
 description   : Techie Joe's test site.
-# title       : The title of your site # (best without the punctuation dot).
+# title       : The title of your site
 # description : Short description of your site's purpose.
 
 author        : Techie Joe
 year          : 2025
 
+baseurl       : '/proto'
 base_url      : '/proto'
 home_url      : '/proto'
 
 lang          : 'en-US'
 theme_color   : '#222'
 color_scheme  : light dark
-ghost         : bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlv
+
+ghost         : bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLGxvY2FsaG9zdDo0MDAw
+# ghost: 'your-tracking-id'
+# to track your ThemeJs.
 
 # google_analytics: # your Google Analytics tracking ID.
 # to track your website using Google Analytics.
@@ -41,6 +51,12 @@ ghost         : bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlv
 
 sass:
   style: compressed
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
 
 # exclude these files from Jekyll production site (_site).
 exclude:
