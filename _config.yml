@@ -17,8 +17,8 @@ description   : Techie Joe's test site.
 author        : Techie Joe
 year          : 2025
 
-version       : '0.0.3'
-revision      : '2601.3'
+version       : '0.0.4'
+revision      : '2601.4'
 
 baseurl       : '/proto'
 base_url      : '/proto'
@@ -29,17 +29,18 @@ theme_color   : '#222'
 color_scheme  : light dark
 
 ghost         : bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLGxvY2FsaG9zdDo0MDAw
-# ghost: 'your-tracking-id'
+# ghost: your-tracking-id
 # to track your ThemeJs.
 
-# google_analytics: # your Google Analytics tracking ID.
+# google_analytics: your-tracking-id
 # to track your website using Google Analytics.
 
-# cloudflare_analytics: # your Cloudflare Analytics tracking ID.
+# cloudflare_analytics: your-tracking-id
 # to track your website using Cloudflare Analytics.
 
-# show_downloads: # true or false (unquoted).
-# indicate whether to provide a download URL.
+# show_downloads: true
+# true or false (unquoted).
+# to indicate whether to provide a download URL.
 
 # github:
 #   zip_url: http://example.com/download.zip
