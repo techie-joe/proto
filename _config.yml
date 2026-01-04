@@ -1,20 +1,13 @@
+# ============================================
+
 # the location of the remote_theme.
 remote_theme: techie-joe/dove
-# theme: dove
 
 # add jekyll-remote-theme to the plugins list.
 plugins:
-  - jekyll-seo-tag
-  - jekyll-github-metadata
   - jekyll-remote-theme
-  # - jekyll-paginate
-  # - jekyll-redirect-from
-  # - jekyll-sitemap
-  # - jekyll-feed
-  # - jemoji
 
-version       : '0.0.3'
-revision      : '2601.3'
+# ============================================
 
 title         : Proto
 description   : Techie Joe's test site.
@@ -23,6 +16,9 @@ description   : Techie Joe's test site.
 
 author        : Techie Joe
 year          : 2025
+
+version       : '0.0.3'
+revision      : '2601.3'
 
 baseurl       : '/proto'
 base_url      : '/proto'
@@ -52,33 +48,27 @@ ghost         : bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLGxvY2FsaG9zdDo0MDAw
 sass:
   style: compressed
 
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: default
-
-# exclude these files from Jekyll production site (_site).
+# exclude these from Jekyll production (_site).
 exclude:
-- ".editorconfig"
-- ".github"
-- ".gitignore"
-- ".sass-cache"
-- ".jekyll-cache"
-- ".jekyll-metadata"
-- "*.gem"
-- "*.gemspec"
-- Gemfile
-- Gemfile.lock
-- ".bundle"
-- vendor
-- script
-- node_modules
-- package-lock.json
-- package.json
-- gulpfile.js
-- CNAME
-- "*.x"
-- "*.ignore"
-- "*.backup"
-- "*.localhost"
+  - ".editorconfig"
+  - ".github"
+  - ".gitignore"
+  - ".sass-cache"
+  - ".jekyll-cache"
+  - ".jekyll-metadata"
+  - "*.gem"
+  - "*.gemspec"
+  - Gemfile
+  - Gemfile.lock
+  - ".bundle"
+  - vendor
+  - script
+  - node_modules
+  - package-lock.json
+  - package.json
+  - gulpfile.js
+  - CNAME
+  - "*.x"
+  - "*.ignore"
+  - "*.backup"
+  - "*.localhost"
