@@ -1,13 +1,8 @@
-# ============================================
-
-# the location of the remote_theme.
 remote_theme: techie-joe/dove
-
-# add jekyll-remote-theme to the plugins list.
 plugins:
   - jekyll-remote-theme
 
-# ============================================
+# ================================================================
 
 title         : Proto
 description   : Techie Joe's test site.
