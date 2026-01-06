@@ -39,31 +39,3 @@ ghost         : bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLGxvY2FsaG9zdDo0MDAw
 # github:
 #   zip_url: http://example.com/download.zip
 #   another_url: another_value
-
-sass:
-  style: compressed
-
-# exclude these from Jekyll production (_site).
-exclude:
-  - ".editorconfig"
-  - ".github"
-  - ".gitignore"
-  - ".sass-cache"
-  - ".jekyll-cache"
-  - ".jekyll-metadata"
-  - "*.gem"
-  - "*.gemspec"
-  - Gemfile
-  - Gemfile.lock
-  - ".bundle"
-  - vendor
-  - script
-  - node_modules
-  - package-lock.json
-  - package.json
-  - gulpfile.js
-  - CNAME
-  - "*.x"
-  - "*.ignore"
-  - "*.backup"
-  - "*.localhost"
