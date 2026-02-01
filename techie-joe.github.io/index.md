@@ -16,6 +16,6 @@ use_nav: false
 
 ---
 
-[**Hello World** — _The journey into the Digital Frontier_](hello-world) — For most people, **"Hello World"** is just a phrase that's totally basic, maybe even a little cliche. But if you're actually building things, those two tokens are the real starting point. The second they render correctly on my screen, the portal swings wide open. That's the moment I can confidently confirm that the machine is listening. [Read more ..](hello-world)
+[**Hello World** — _The journey into the Digital Frontier_ —](hello-world) For most people, **"Hello World"** is just a phrase that's totally basic, maybe even a little cliche. But if you're actually building things, those two tokens are the real starting point. The second they render correctly on my screen, the portal swings wide open. That's the moment I can confidently confirm that the machine is listening. [Read more ..](hello-world)
 
 <div style="margin-top:3rem"></div>
