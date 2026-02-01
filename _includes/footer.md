@@ -21,7 +21,4 @@
 
 {{ thin_hr }}
 
-This site is open source. {% github_edit_link "Improve this page" %}.
-{: .text-right.text-gray.small }
-
 {%- endif %}

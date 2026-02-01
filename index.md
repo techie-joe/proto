@@ -6,6 +6,7 @@ use_nav: false
 <div class="relative"><div class="_bimoji">🚧</div></div>
 
 <h1 id="{{ site.title | downcase | append:'site' | replace:' ','-' }}">🚧 {{ site.title }} site</h1>
+{: style="border:0" }
 
 ```yml
 version        : {{ site.version | default: '(undefined)' }}
@@ -14,11 +15,11 @@ build_revision : {{ site.github.build_revision | default: '(undefined)' }}
 ```
 {: style="max-width:600px" }
 
-## Pages
+### Pages
 
 {% include pages.md %}
 
-## Projects
+### Projects
 
 - [Dove](https://techie-joe.github.io/dove){: target="techie-joe.github.io/dove" }
 
