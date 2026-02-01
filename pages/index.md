@@ -17,4 +17,4 @@ _(Nothing has been posted)_
 ---
 {: style="margin-top:3rem" }
 
-{% include nav_common.html %}
+{% include common_nav.md %}

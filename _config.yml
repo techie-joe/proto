@@ -4,25 +4,23 @@ plugins:
 
 # ================================================================
 
-title         : Proto
+title         : Proto Site
 description   : Techie Joe's test site.
 # title       : The title of your site
 # description : Short description of your site's purpose.
 
 author        : Techie Joe
 
-version       : '0.0.4'
-revision      : '2601.4'
+version       : 0.0.1
+revision      : 2601.31
 
-baseurl       : '/proto'
-base_url      : '/proto'
-home_url      : '/proto'
+baseurl       : /proto
+base_url      : /proto
+live_url      : https://techie-joe.github.io/proto
 
-lang          : 'en-US'
-theme_color   : '#222'
-color_scheme  : light dark
+lang          : en-US
 
-ghost         : bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLGxvY2FsaG9zdDo0MDAw
+ghost: bG9jYWxob3N0OjQwMDAsdGVjaGllLWpvZS5naXRodWIuaW8
 # ghost: your-tracking-id
 # to track your ThemeJs.
 
@@ -39,3 +37,28 @@ ghost         : bG9jYWxob3N0LHRlY2hpZS1qb2UuZ2l0aHViLmlvLGxvY2FsaG9zdDo0MDAw
 # github:
 #   zip_url: http://example.com/download.zip
 #   another_url: another_value
+
+# exclude these from Jekyll production (_site).
+exclude:
+  - ".editorconfig"
+  - ".github"
+  - ".gitignore"
+  - ".sass-cache"
+  - ".jekyll-cache"
+  - ".jekyll-metadata"
+  - "*.gem"
+  - "*.gemspec"
+  - Gemfile
+  - Gemfile.lock
+  - ".bundle"
+  - vendor
+  - script
+  - node_modules
+  - package-lock.json
+  - package.json
+  - gulpfile.js
+  - CNAME
+  - "*.x"
+  - "*.ignore"
+  - "*.backup"
+  - "*.localhost"
