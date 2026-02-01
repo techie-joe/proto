@@ -1,31 +1,27 @@
 ---
-title: Home
-use_header: false
 use_nav: false
 ---
-{% include_relative README.md %}
+{% include ui.html %}
+
+<div class="relative"><div class="_bimoji">🚧</div></div>
+
+<h1 id="{{ site.title | downcase | append:'site' | replace:' ','-' }}">🚧 {{ site.title }} site</h1>
 
 ```yml
-# _config.yml
-version      : {{ site.version | default: '(undefined)' }}
-revision     : {{ site.revision | default: '(undefined)' }}{{'.'}}{{ site.github.build_revision | default: '(undefined)' }}
-title        : {{ site.title | default: '(undefined)' }}
-description  : {{ site.description | default: '(undefined)' }}
+version        : {{ site.version | default: '(undefined)' }}
+revision       : {{ site.revision | default: '(undefined)' }}
+build_revision : {{ site.github.build_revision | default: '(undefined)' }}
 ```
+{: style="max-width:600px" }
 
----
-{: .mt-6 }
+## Pages
 
-###### Testing
+{% include pages.md %}
 
-- [techie-joe.github.io](techie-joe.github.io)
-- [Liquid](liquid)
+## Projects
 
-###### Projects
+- [Dove](https://techie-joe.github.io/dove){: target="techie-joe.github.io/dove" }
 
-- [Dove themes](https://techie-joe.github.io/dove)
+<div style="margin-top:3rem"></div>
 
-&nbsp;
-{: .mt-0 }
-
-{% include footer.md %}
+{% comment %} --- end of page --- {% endcomment %}

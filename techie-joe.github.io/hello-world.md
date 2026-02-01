@@ -1,9 +1,10 @@
 ---
+layout: mallet-page
 title: Hello World
 description: The journey into the Digital Frontier
 use_nav: false
-use_footer: false
 ---
+{% include ui.html %}
 
 # {{ page.title }}
 
@@ -13,7 +14,7 @@ For most people, ***"Hello World"*** is just a phrase that's totally basic, mayb
 {: .indentx.text-justify }
 
 ---
-{: .mt-3.mb-6 }
+{: .mt-4.mb-4 }
 
 That first ***"Hello World"*** isn't just a code, it's the successful initial deployment of an idea. The phrase is way more than just a literal string. It is the initialization of a new potential. It's the triumph to the hours spent on setting-up the environment variables right, wrestling with the linter, and staring down a blank terminal, demanding it to take shape.
 {: .indentx.text-justify.big-first }
@@ -33,4 +34,4 @@ For the global community of developers who understand it, ***"Hello World"*** is
 So, when I type ***"Hello World"*** .. know this: I'm not testing something. I'm initiating a creation, driving innovation, and transforming the digital landscape. It's my launch sequence. Behind those **two perfect little words** is the core logic of everything I build.
 {: .indent.text-justify }
 
-{% include_relative footer.md %}
+<div style="margin-top:3rem"></div>

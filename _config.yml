@@ -4,7 +4,7 @@ plugins:
 
 # ================================================================
 
-title         : Proto Site
+title         : Proto
 description   : Techie Joe's test site.
 # title       : The title of your site
 # description : Short description of your site's purpose.
@@ -15,7 +15,7 @@ version       : 0.0.1
 revision      : 2601.31
 
 baseurl       : /proto
-base_url      : /proto
+home_url      : /proto
 live_url      : https://techie-joe.github.io/proto
 
 lang          : en-US

@@ -2,19 +2,18 @@
 title: Pages
 description: List of all pages on this site.
 permalink: pages
+index: false
 ---
+{% include ui.html %}
 
 # {{ page.title }}
 
-{% if site.pages.size > 0 -%}
-{{ page.description }}
-{%- else -%}
-_(Nothing has been posted)_
-{%- endif %}
+{% if site.pages.size > 0 -%}{{ page.description }}{%- endif %}
 
 {% include pages.md %}
 
----
-{: style="margin-top:3rem" }
+<div style="margin-top:3rem"></div>
+
+{{ thin_hr }}
 
 {% include common_nav.md %}

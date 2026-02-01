@@ -1,10 +1,11 @@
 ---
 layout: vars
-title: Variables
-description: Variables on this site.
+index: false
+title: Pages
+description: Pages on this site.
 ---
 <style>article pre.highlight { max-height:50vh }</style>
 
-{% include vars.md %}
+{% include dove/vars_site.pages.md %}
 
 {% comment %} --- end of page --- {% endcomment %}

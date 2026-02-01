@@ -1,10 +1,11 @@
 ---
 layout: vars
-title: Variables
-description: Variables on this site.
+index: false
+title: Github
+description: Github values on this site.
 ---
 <style>article pre.highlight { max-height:50vh }</style>
 
-{% include vars.md %}
+{% include dove/vars_site.github.md %}
 
 {% comment %} --- end of page --- {% endcomment %}

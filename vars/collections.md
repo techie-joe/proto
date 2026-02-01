@@ -1,10 +1,11 @@
 ---
 layout: vars
-title: Variables
-description: Variables on this site.
+index: false
+title: Collections
+description: Collections on this site.
 ---
 <style>article pre.highlight { max-height:50vh }</style>
 
-{% include vars.md %}
+{% include vars_site.collections.md %}
 
 {% comment %} --- end of page --- {% endcomment %}
