@@ -5,6 +5,6 @@ description: Variables on this site.
 ---
 <style>article pre.highlight { max-height:50vh }</style>
 
-{% include vars.md %}
+{% include dove/vars.md %}
 
 {% comment %} --- end of page --- {% endcomment %}

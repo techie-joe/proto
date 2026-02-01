@@ -6,6 +6,8 @@
 
 {{ thin_hr }}
 
+<!-- your footer goes here -->
+
 {%- unless page.path == 'pages.md'
         or page.path == 'posts.md'
         or page.path == 'about.md'
@@ -14,7 +16,7 @@
 <nav class="_common_nav">{{ dove_nav | markdownify }}</nav>
 {%- endunless %}
 
-{%- capture tj_nav %}{%- include tj_nav.md %}{%- endcapture %}
+{%- capture tj_nav %}{%- include dove/tj_nav.md %}{%- endcapture %}
 <nav class="_common_nav">{{ tj_nav | markdownify }}</nav>
 
 {%- endunless %}

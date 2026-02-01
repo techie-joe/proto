@@ -1,6 +1,6 @@
 ---
 permalink: about
-layout: default
+layout: default-page
 title: About
 description: About the Proto site.
 ---
