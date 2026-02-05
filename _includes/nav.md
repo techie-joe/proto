@@ -5,7 +5,7 @@
 
 <!-- your nav goes here -->
 
-{%- if page.path == 'index.html' -%}
+{%- if page.path == 'index.md' -%}
 **Home**{%- else -%}[Home]({{ site.home_url }}/)
 {%- endif %}
 {{- bull -}}

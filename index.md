@@ -1,4 +1,5 @@
 ---
+use_header: false
 use_nav: false
 ---
 {% include ui.html %}
@@ -15,14 +16,20 @@ build_revision : {{ site.github.build_revision | default: '(undefined)' }}
 ```
 {: style="max-width:600px" }
 
+{{ thin_hr }}
+
+### We are testing
+
+[Techie Joe's Website](techie-joe.github.io)
+
 ### Pages
 
 {% include pages.md %}
 
-### Projects
+### Related Projects
 
-- [Dove](https://techie-joe.github.io/dove){: target="techie-joe.github.io/dove" }
+[Dove](https://techie-joe.github.io/dove){: target="techie-joe.github.io/dove" }
 
-<div style="margin-top:3rem"></div>
+<div style="margin-top:1rem"></div>
 
 {% comment %} --- end of page --- {% endcomment %}

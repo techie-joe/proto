@@ -1,4 +1,5 @@
 #!/bin/sh
+# Install NPM dependencies to _sass directory and symlink to node_modules
 
 set -e
 

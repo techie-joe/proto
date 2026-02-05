@@ -1,14 +1,15 @@
 ---
+index: false
 layout: mallet-page
-title: Hello World
-description: The journey into the Digital Frontier
+title: The Developer's Launch Sequence
+description: A post about the Hello World catch phrase.
 use_nav: false
 ---
 {% include ui.html %}
 
 # {{ page.title }}
 
-**{{ page.description }}**
+> _{{ page.description }}_
 
 For most people, ***"Hello World"*** is just a phrase that's totally basic, maybe even a little cliche. But if you're actually building things, those two tokens are the real starting point. The second they render correctly on my screen, the portal swings wide open. That's the moment I can confidently confirm that the machine is listening.
 {: .indentx.text-justify }
@@ -16,7 +17,7 @@ For most people, ***"Hello World"*** is just a phrase that's totally basic, mayb
 ---
 {: .mt-4.mb-4 }
 
-That first ***"Hello World"*** isn't just a code, it's the successful initial deployment of an idea. The phrase is way more than just a literal string. It is the initialization of a new potential. It's the triumph to the hours spent on setting-up the environment variables right, wrestling with the linter, and staring down a blank terminal, demanding it to take shape.
+🖥️ That first ***"Hello World"*** isn't just a code, it's the successful initial deployment of an idea. The phrase is way more than just a literal string. It is the initialization of a new potential. It's the triumph to the hours spent on setting-up the environment variables right, wrestling with the linter, and staring down a blank terminal, demanding it to take shape.
 {: .indentx.text-justify.big-first }
 
 > That flash of text is a shout to the void, the proof saying, ***"It's here, and it's ready to scale."***
