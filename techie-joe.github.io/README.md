@@ -1,17 +1,19 @@
 # Techie Joe's Website
 
-🖥️ Welcome to my Lab!
+🛠️ **Hand picked tools and resources**
 
-I build scalable apps, clean systems, and AI-driven workflows. Dive in to see what I’m working on or check out my library of tools on my website! 🛠️
+I build apps and tools to make development faster and smarter. Dive in to see what I’m working on or check out my library of tools on [my website](https://techie-joe.github.io/)!
 
-<a href="https://techie-joe.github.io/" title="Visit Techie Joe's Website" class="button primary" style="padding:.5em 1em;font-size:1.2rem;">Visit my Website</a>
+#### 🧠 What is it about?
 
-###### _🧠 What is it about?_
-
-After two decades of engineering, I stopped reinventing solutions and started systematizing them. I’ve found that the best tools are the ones you build yourself. This space is where those solutions live:
+In this curated collection of resources, you’ll find practical development practices, articles, tools, frameworks, and design principles to build cleaner, faster and smarter websites and applications. After two decades of engineering, I stopped reinventing solutions and started systematizing them. This is where those solutions live. Find out what suits you, and let’s build something great together.
 
 - **Maintained Tools** — Libraries and frameworks I actively use.
 - **Engineering Patterns** — Practical architecture and clean-code principles.
 - **Workflow Accelerators** — Utilities and AI-assisted processes that remove friction.
 
-Everything here is battle-tested in real projects. Take what’s useful, and let's build something great together.
+<div style="margin-top:3rem"></div>
+
+---
+
+<a href="https://techie-joe.github.io/" title="Visit Techie Joe's Website" class="button primary" style="padding:.5em 1em;font-size:1.2rem;">Visit my website</a>

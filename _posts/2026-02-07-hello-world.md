@@ -1,6 +1,6 @@
 ---
-index: false
-layout: mallet-page
+permalink: techie-joe.github.io/hello-world
+layout: mallet
 title: The Developer's Launch Sequence
 description: A post about the Hello World catch phrase.
 use_nav: false
@@ -17,19 +17,16 @@ For most people, ***"Hello World"*** is just a phrase that's totally basic, mayb
 ---
 {: .mt-4.mb-4 }
 
-🖥️ That first ***"Hello World"*** isn't just a code, it's the successful initial deployment of an idea. The phrase is way more than just a literal string. It is the initialization of a new potential. It's the triumph to the hours spent on setting-up the environment variables right, wrestling with the linter, and staring down a blank terminal, demanding it to take shape.
+🖥️ The first ***"Hello World"*** is not a code, it's the successful initial deployment of an idea. The phrase is way more than just a literal string. It is the initialization of a new potential, a triumph to the hours spent on setting-up the environment variables right, wrestling with the linter, and staring down a blank terminal, demanding it to take shape. That flash of text is a shout to the void, the proof saying, ***"It's here, and it's ready to scale."***
 {: .indentx.text-justify.big-first }
 
-> That flash of text is a shout to the void, the proof saying, ***"It's here, and it's ready to scale."***
-{: .mb-5 }
-
-For me, it always comes out of a `console.log`, a terminal, or rendered on the top corner of a blank browser window. Honestly, the form doesn't matter. Seeing that first output is always a clear signal that I've started another journey. And the excitement doesn't stop with the first successful run. I repeatedly use it for any quick test before starting with the real work: crafting user interfaces, hammering out responsive logic, and writing codes that connects and bring data to life. 
+For me, it always comes out of a `console.log`, a terminal, or rendered on the top corner of a blank browser window. Honestly, the form doesn't matter. Seeing that first output is always a clear signal that I've started another journey. And the excitement doesn't stop with the first successful run. I repeatedly use it for any quick test before starting with the real work. Whether crafting user interfaces, hammering out responsive logic, and writing codes that connects and bring data to life. 
 {: .indent.text-justify }
 
 For the global community of developers who understand it, ***"Hello World"*** is a sort of a credential. It's a nod from a machine that execute exactly what you told it to do. It's the moment a journey begins. Tools evolved, languages updated, and landscape shifts, but the spirit of that first message remains. A confident greeting to the boundless digital realm.
 {: .indent.text-justify }
 
-> That moment humbles me. For me: ***"Hello World is the first commit, not the final release."***
+> That moment humbles me. ***"Hello World is the first commit, to the final release about to be."***
 {: .mb-5 }
 
 So, when I type ***"Hello World"*** .. know this: I'm not testing something. I'm initiating a creation, driving innovation, and transforming the digital landscape. It's my launch sequence. Behind those **two perfect little words** is the core logic of everything I build.

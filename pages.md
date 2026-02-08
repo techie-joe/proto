@@ -6,9 +6,7 @@ index: false
 ---
 {% include ui.html %}
 
-# {{ page.title }}
-
-{% if site.pages.size > 0 -%}{{ page.description }}{%- endif %}
+# {{ page.title }} on this site
 
 {% include pages.md %}
 
