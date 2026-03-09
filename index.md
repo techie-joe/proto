@@ -33,7 +33,10 @@ build_revision : {{ site.github.build_revision | default: '(undefined)' }}
 
 ```
 - implement TJ Website
-- fix back script
+- fix js_back script
+- move prime theme
+- update dove (with prime and mallet)
+- upgrade themejs (site aware)
 ```
 
 <div style="margin-top:3rem"></div>
