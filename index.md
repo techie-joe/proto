@@ -29,6 +29,13 @@ build_revision : {{ site.github.build_revision | default: '(undefined)' }}
 
 [Dove](https://techie-joe.github.io/dove){: target="techie-joe.github.io/dove" }
 
-<div style="margin-top:1rem"></div>
+### Things to do
+
+```
+- implement TJ Website
+- fix back script
+```
+
+<div style="margin-top:3rem"></div>
 
 {% comment %} --- end of page --- {% endcomment %}
