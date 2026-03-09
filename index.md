@@ -25,10 +25,6 @@ build_revision : {{ site.github.build_revision | default: '(undefined)' }}
 
 [Techie Joe's Website](techie-joe.github.io)
 
-### Pages on this site
-
-{% include pages.md %}
-
 ### Related projects
 
 [Dove](https://techie-joe.github.io/dove){: target="techie-joe.github.io/dove" }
